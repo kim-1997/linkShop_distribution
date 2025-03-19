@@ -113,3 +113,22 @@
   z-index: 1;
   color: #fff;
 }
+
+@media screen and (max-width: 400px) {
+  .info {
+    &__input {
+      input {
+        &::placeholder {
+          font-size: 14px;
+        }
+      }
+    }
+
+    &__file {
+      button {
+        padding: 5px 10px;
+        font-size: 14px;
+      }
+    }
+  }
+}

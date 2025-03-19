@@ -199,6 +199,7 @@ export default function ShopEditPage() {
     } catch (error) {
       if (error.message === 'Bad Request') {
         alert('비밀번호를 확인해 주세요');
+        setIsLoading(false);
       } else {
         alert('서버 오류가 발생했습니다.');
       }
