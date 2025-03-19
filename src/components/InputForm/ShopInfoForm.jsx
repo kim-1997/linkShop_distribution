@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export default function ShopInfoForm({
   shopData,
@@ -8,7 +8,6 @@ export default function ShopInfoForm({
   handleFileChange,
   fileName,
 }) {
-  console.log(shopData);
   return (
     <div className="info__box">
       <div className="info__top">
@@ -21,7 +20,7 @@ export default function ShopInfoForm({
             <input
               type="text"
               name="imageUrl"
-              value={shopData.shop.imageUrl.split("/").pop() || ""}
+              value={shopData.shop.imageUrl.split('/').pop() || ''}
               placeholder="상점 대표 이미지를 첨부해주세요."
               onChange={(e) => {
                 handleShopChange(e);
@@ -31,7 +30,7 @@ export default function ShopInfoForm({
             <div className="info__file">
               <button
                 type="button"
-                onClick={() => document.getElementById("ShopFileInput").click()}
+                onClick={() => document.getElementById('ShopFileInput').click()}
               >
                 파일 첨부
               </button>
@@ -47,7 +46,7 @@ export default function ShopInfoForm({
             <input
               type="text"
               name="name"
-              value={shopData.name || ""}
+              value={shopData.name || ''}
               placeholder="표시하고 싶은 이름을 적어 주세요."
               onChange={(e) => {
                 handleOtherShopChange(e);
@@ -60,7 +59,7 @@ export default function ShopInfoForm({
             <input
               type="text"
               name="shopUrl"
-              value={shopData.shop.shopUrl || ""}
+              value={shopData.shop.shopUrl || ''}
               placeholder="Url을 입력해주세요."
               onChange={(e) => {
                 handleShopChange(e);
@@ -73,7 +72,7 @@ export default function ShopInfoForm({
             <input
               type="text"
               name="userId"
-              value={shopData.userId || ""}
+              value={shopData.userId || ''}
               placeholder="유저 ID를 입력해주세요."
               onChange={(e) => {
                 handleOtherShopChange(e);
@@ -86,7 +85,7 @@ export default function ShopInfoForm({
             <input
               type="password"
               name="password"
-              value={shopData.password || ""}
+              value={shopData.password || ''}
               placeholder="비밀번호를 입력해주세요."
               onChange={(e) => {
                 handleOtherShopChange(e);

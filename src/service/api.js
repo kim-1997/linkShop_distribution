@@ -9,7 +9,6 @@ export async function getShop({ orderBy = 'recent', cursor = '' }) {
   const response = await fetch(`${BASE_URL}?${query}`);
   const body = await response.json();
 
-  console.log(response);
   return body;
 }
 
@@ -54,8 +53,6 @@ export const updateShop = async (id, currentPassword, updatedData) => {
     );
 
     const data = await response.json();
-    console.log('서버 응답 데이터:', data);
-    console.log('서버 응답 상태:', response.status);
 
     if (response.ok) {
       return data;
@@ -85,8 +82,6 @@ export const deleteShop = async (id, currentPassword) => {
     );
 
     const data = await response.json();
-    console.log('서버 응답 데이터:', data);
-    console.log('서버 응답 상태:', response.status);
 
     if (response.ok) {
       return data;
@@ -111,8 +106,6 @@ export async function likeShop(cardId, likesCount) {
         likesCount,
       }),
     });
-
-    console.log(response);
 
     if (!response.ok) {
       throw new Error('Error');
@@ -151,7 +144,6 @@ export async function uploadImage(file) {
       },
     );
     const data = await response.json();
-    console.log('서버 응답 데이터:', data);
 
     if (!response.ok) {
       throw new Error('Error');

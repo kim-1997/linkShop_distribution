@@ -71,7 +71,6 @@ export default function ShopEditPage() {
       console.error('파일이 선택 x');
       return;
     }
-    console.log('파일 선택:', file);
     setFileName(file.name);
     const imageUrl = await uploadImage(file);
     setShopData((prev) => ({
@@ -81,7 +80,6 @@ export default function ShopEditPage() {
         imageUrl: imageUrl,
       },
     }));
-    console.log('이미지 url', imageUrl);
     allFieldsFilled();
   };
 
@@ -100,7 +98,6 @@ export default function ShopEditPage() {
         i === index ? { ...product, imageUrl } : product,
       ),
     }));
-    console.log('이미지 URL:', imageUrl);
     allFieldsFilled();
   };
 

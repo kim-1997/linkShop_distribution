@@ -70,7 +70,6 @@ export default function ShopDetailPage() {
       } else if (type === 'delete') {
         // 비밀번호 검증 후 스토어 삭제 및 초기 화면 이동
         const response = await deleteShop(id, password);
-        console.log(response);
 
         if (response && response.id) {
           setShowPasswordModal(false);

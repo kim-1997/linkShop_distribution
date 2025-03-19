@@ -16,7 +16,6 @@ export default function PasswordModal({ onSubmit, onClose, type }) {
       setError('비밀번호를 입력해주세요.');
       return;
     }
-    console.log(type);
     onSubmit(password, type);
   };
 
