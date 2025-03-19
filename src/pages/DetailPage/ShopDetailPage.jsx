@@ -6,6 +6,7 @@ import LikeButton from '../../components/Likes/LikeButton.jsx';
 import PasswordModal from '../../components/PasswordModal/PasswordModal.jsx';
 import share from '../../assets/images/share.png';
 import more from '../../assets/images/more.png';
+import ioadingImg from '../../assets/images/loadingImg.gif';
 
 const DetailStyle = {
   top: '20px',
@@ -99,7 +100,11 @@ export default function ShopDetailPage() {
   }, [id]);
 
   if (!detailData) {
-    return <div className="loading">로딩 중...</div>;
+    return (
+      <div className="loading ">
+        <img src={ioadingImg} alt="loading" />
+      </div>
+    );
   }
 
   // URL 복사

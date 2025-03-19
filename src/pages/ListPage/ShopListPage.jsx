@@ -5,6 +5,7 @@ import { getShop } from '../../service/api.js';
 import searchNull from '../../assets/images/Img_search_null.png';
 import Modal from '../../components/Modal/Modal.jsx';
 import { useShopContext } from '../../contexts/ShopContext.jsx';
+import ioadingImg from '../../assets/images/loadingImg.gif';
 
 export default function ShopListPage() {
   const [data, setData] = useState([]);
@@ -99,8 +100,8 @@ export default function ShopListPage() {
         </>
       )}
       {isFetching && (
-        <div className="loading-message">
-          <p>데이터 불러오는 중...</p>
+        <div className="loading loading--more">
+          <img src={ioadingImg} alt="loading" />
         </div>
       )}
     </div>
