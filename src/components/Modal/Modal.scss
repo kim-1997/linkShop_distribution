@@ -4,6 +4,31 @@
   border: none;
   background-color: white;
   cursor: pointer;
+
+  &__button {
+    padding: 20px 0;
+    cursor: pointer;
+    border-bottom: 1px solid #ccc;
+  }
+
+  &__button {
+    &.selected {
+      font-weight: bold;
+      color: #fb545b;
+    }
+  }
+
+  &__button {
+    &.selected::after {
+      content: '';
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      background-image: url('../../assets/images/check.png');
+      background-size: contain;
+      margin-left: 10px;
+    }
+  }
 }
 
 .modal__overlay {
@@ -40,27 +65,11 @@
   border: 1px solid #dddcdf;
 }
 .modal__detail button {
-  border: none;
-  background-color: white;
-  cursor: pointer;
+  background-color: transparent;
 }
 .modal__closeButton {
   position: absolute;
   top: -5px;
   right: 5px;
-}
-
-.sort__button.selected {
-  font-weight: bold;
-  color: #fb545b;
-}
-
-.sort__button.selected::after {
-  content: '';
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  background-image: url('../../assets/images/check.png');
-  background-size: contain;
-  margin-left: 10px;
+  border: none;
 }
