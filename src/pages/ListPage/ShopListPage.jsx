@@ -80,6 +80,15 @@ export default function ShopListPage() {
         handleSearchChange={handleSearchChange}
         handleSearchSubmit={handleSearchSubmit}
       />
+      <span>
+        {orderBy === 'recent'
+          ? '최신순 ▼'
+          : orderBy === 'likes'
+            ? '좋아요순 ▼'
+            : orderBy === 'productsCount'
+              ? '등록된 상품순 ▼'
+              : '상세필터 ▼'}
+      </span>
       <button className="sort" onClick={toggleModal}>
         상세필터 ▼
       </button>
