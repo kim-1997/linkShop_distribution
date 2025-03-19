@@ -26,3 +26,10 @@
   background-position: center;
   margin: 0 auto;
 }
+
+@media screen and (max-width: 400px) {
+  .header__logo {
+    width: 130px;
+    height: 21px;
+  }
+}
