@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 export default function ProductForm({
   shopData,
@@ -25,7 +25,7 @@ export default function ProductForm({
                 name="imageUrl"
                 placeholder="상품 이미지를 첨부해주세요."
                 value={
-                  product.imageUrl ? product.imageUrl.split("/").pop() : ""
+                  product.imageUrl ? product.imageUrl.split('/').pop() : ''
                 }
                 readOnly
               />

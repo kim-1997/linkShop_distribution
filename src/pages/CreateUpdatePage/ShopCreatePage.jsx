@@ -127,6 +127,10 @@ export default function ShopCreatePage() {
 
   // 제품 추가
   const handleAddProduct = () => {
+    if (shopData.products.length >= 3) {
+      alert('최대 3개의 상품만 추가 가능합니다.');
+      return;
+    }
     const newProduct = {
       price: '',
       imageUrl: '',
