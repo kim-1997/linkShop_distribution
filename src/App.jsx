@@ -7,15 +7,26 @@ import Container from './components/BaseContainer/Container';
 import ShopDetailPage from './pages/DetailPage/ShopDetailPage';
 import DetailHeader from './components/headers/DetailHeader';
 import ShopEditPage from './pages/CreateUpdatePage/ShopEditPage';
+import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 
 function App() {
   const location = useLocation();
-  const isDetailPage = location.pathname.startsWith('/link/');
+  const currentPath = location.pathname;
+
+  const showHeader =
+    currentPath === '/' ||
+    currentPath.startsWith('/list') ||
+    currentPath.startsWith('/link') ||
+    currentPath.startsWith('/linkpost');
+
+  const isDetailPage = currentPath.startsWith('/link/');
+
   return (
     <>
-      {isDetailPage ? <DetailHeader /> : <Header />}
+      {showHeader && (isDetailPage ? <DetailHeader /> : <Header />)}{' '}
       <Container>
         <Routes>
+          <Route path="/*" element={<NotFoundPage />} />
           <Route path="/" element={<Navigate to="/list" />} />
           <Route path="/list" element={<ShopListPage />} />
           <Route path="/link/:id" element={<ShopDetailPage />} />
